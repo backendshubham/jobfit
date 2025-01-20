@@ -19,7 +19,7 @@ const App = () => {
     const newTheme = !darkMode ? 'dark' : 'light';
     rootElement.setAttribute('data-theme', newTheme); 
     setDarkMode(!darkMode);
-    toast.info(`Switched to ${newTheme} Mode!`, { autoClose: 3000 });
+    // toast.info(`Switched to ${newTheme} Mode!`, { autoClose: 3000 });
   };
 
 

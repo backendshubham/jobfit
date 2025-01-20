@@ -101,10 +101,13 @@ const InputSection = ({
                         View Score
                       </button>
                     </div>
-                  ) : (
+                  ) : 
+                  (
                     // Show Remove button before score is fetched
-                    <button onClick={() => removeFile(index)} className="remove-file-btn">Remove</button>
-                  )}
+                    // <button onClick={() => removeFile(index)} className="remove-file-btn">Remove</button>
+                    ''
+                  )
+                  }
                 </li>
               ))}
             </ul>
@@ -120,7 +123,7 @@ const InputSection = ({
             <span>Note:</span> Ensure your resume is clear, concise, and highlights relevant experience.
             <br />
             <br />
-            <a href="#help">Click here for tips on creating the perfect resume.</a>
+            <a href="https://i.ibb.co/P6GGHs4/jobfit-help.webp" target='_blank'>Click here for tips on creating the perfect resume.</a>
           </p>
         </div>
       </div>
