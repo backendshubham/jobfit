@@ -50,6 +50,7 @@ body {
   width: 100%;
   max-width: 1200px;
   gap: 30px;
+  margin-bottom: 50px
 }
 
 .input-section, .result-section {
@@ -619,4 +620,118 @@ body {
 
 .check-id:hover {
   text-decoration: underline; /* Optional underline on hover */
+}
+
+
+
+/* App.css */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content section */
+.container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  overflow: auto; /* Ensures content can scroll if necessary */
+}
+
+/* Left Section */
+.input-section {
+  flex: 1;
+  padding-right: 20px;
+}
+
+/* Right Section */
+.result-section {
+  flex: 1;
+  padding-left: 20px;
+}
+
+
+
+
+
+/* Footer Styles */
+.footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  padding: 5px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  z-index: 1000; /* Ensures the footer stays above other content */
+}
+
+/* Default Light Mode */
+:root {
+  --footer-bg-color: #ffffff;
+  --footer-text-color: #333333;
+  --border-color: #ddd;
+}
+
+/* Dark Mode Customizations */
+[data-theme="dark"] {
+  --footer-bg-color: #2c2f36;
+  --footer-text-color: #f8f9fa;
+  --border-color: #444;
+}
+
+/* Dark Mode Footer Links */
+[data-theme="dark"] {
+  --footer-link-color: #87daf1;
+  --footer-link-hover-color: #6c63ff;
+}
+
+
+.footer {
+ margin-top: 30px;
+}
+
+.footer a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--footer-link-hover-color);
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  font-size: 20px;
+  color: var(--footer-link-color);
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--footer-link-hover-color);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .footer .social-icons a {
+    font-size: 18px;
+  }
 }

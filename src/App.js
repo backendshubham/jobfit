@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import InputSection from './components/InputSection';
 import ResultSection from './components/ResultSection';
+import Footer from './components/Footer';
 import './App.css';
 
 const App = () => {
@@ -98,8 +99,11 @@ const App = () => {
           <ResultSection results={results} />
         </div>
       </div>
+
       <ToastContainer />
+      <Footer />
     </div>
+    
   );
 };
 
