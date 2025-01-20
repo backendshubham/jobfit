@@ -50,7 +50,7 @@ const handleResumeChange = (e) => {
     formData.append('actionType', 'submit_score');
 
     try {
-      const response = await fetch('https://your-app-name-fkuv.onrender.com/api/get-resume-score-ai', {
+      const response = await fetch('https://resumeranker-ai.onrender.com/api/get-resume-score-ai', {
         method: 'POST',
         body: formData,
       });
