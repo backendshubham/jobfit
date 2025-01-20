@@ -59,7 +59,7 @@ const App = () => {
 
       if (response.ok) {
         setResults(data.data);
-        toast.success('Scores are ready!', { autoClose: 3000 });
+        toast.success('Scores are ready!', { autoClose: 2000 });
       } else {
         toast.error(data.message || 'Error fetching results', { autoClose: 5000 });
       }

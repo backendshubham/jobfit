@@ -527,3 +527,92 @@ body {
 .remove-file-btn:hover {
   background-color: #ff4b4b;
 }
+
+/* Desktop View: Both Left and Right Sections Scrollable */
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    gap: 30px;
+    height: 100vh; /* Full height for desktop view */
+  }
+
+  /* Make the left section scrollable */
+  .input-section {
+    flex: 0 0 35%; /* Left section takes 35% of the container width */
+    overflow-y: auto; /* Make left section scrollable */
+    max-height: 100vh; /* Full height for left section */
+    padding-right: 10px; /* Optional: Add space for right-side padding */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--card-bg-color);
+  }
+
+  /* Make the right section scrollable */
+  .result-section {
+    flex: 1; /* Right section will take remaining space */
+    overflow-y: auto; /* Make right section scrollable */
+    max-height: 100vh; /* Full height for right section */
+    padding-left: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--card-bg-color);
+  }
+
+  /* Custom scrollbar styling for Webkit-based browsers (for both sections) */
+  .input-section::-webkit-scrollbar,
+  .result-section::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .input-section::-webkit-scrollbar-thumb,
+  .result-section::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+  }
+
+  .input-section::-webkit-scrollbar-track,
+  .result-section::-webkit-scrollbar-track {
+    background: var(--card-bg-color);
+  }
+}
+
+/* Mobile View - No changes, left section takes full height and no scrolling */
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjusted gap for mobile view */
+  }
+
+  .input-section {
+    height: auto; /* No fixed height on mobile */
+    overflow: visible; /* No scroll on left section */
+  }
+
+  .result-section {
+    height: auto; /* No fixed height on mobile */
+    overflow: visible; /* No scroll on right section */
+  }
+}
+
+
+.file-item {
+  position: relative;
+}
+
+.file-link {
+  display: block; /* Make the link block-level to cover the full list item */
+  width: 100%; /* Ensure the link takes up the full width */
+  padding: 10px; /* Optional padding */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+.check-id {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #007bff; /* Style for the clickable "Click here to check the ID" text */
+}
+
+.check-id:hover {
+  text-decoration: underline; /* Optional underline on hover */
+}

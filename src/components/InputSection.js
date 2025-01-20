@@ -86,32 +86,35 @@ const InputSection = ({
         {/* Displaying selected files */}
         {selectedFiles.length > 0 && (
           <div className="file-list">
-            <ul>
-              {selectedFiles.map((file, index) => (
-                <li key={index} className={`file-item ${file.removing ? 'removing' : ''}`}>
+          <ul>
+            {selectedFiles.map((file, index) => (
+              <li key={index} className={`file-item ${file.removing ? 'removing' : ''}`}>
+                {/* Wrap the entire li item with a clickable link */}
+                <a href={`#resume${index}`} className="file-link">
                   <span>{file.name}</span>
-                  {/* Before score, show "Remove" button */}
-                  {results && results[index] ? (
-                    <div className="resume-actions">
-                      {/* Show View Resume and View Score buttons after score is fetched */}
-                      <a href={URL.createObjectURL(file)} target="_blank" rel="noopener noreferrer">
-                        <button className="view-resume-btn">View Resume</button>
-                      </a>
-                      <button className="view-score-btn" onClick={() => handleGetScore(index)}>
-                        View Score
-                      </button>
-                    </div>
-                  ) : 
-                  (
-                    // Show Remove button before score is fetched
-                    // <button onClick={() => removeFile(index)} className="remove-file-btn">Remove</button>
-                    ''
-                  )
-                  }
-                </li>
-              ))}
-            </ul>
-          </div>
+                  {/* Clickable area for checking the ID */}
+                </a>
+        
+                {/* Before score, show "Remove" button */}
+                {results && results[index] ? (
+                  <div className="resume-actions">
+                    {/* Show View Resume and View Score buttons after score is fetched */}
+                    <a href={URL.createObjectURL(file)} target="_blank" rel="noopener noreferrer">
+                      <button className="view-resume-btn">View Resume</button>
+                    </a>
+                    <button className="view-score-btn" onClick={() => handleGetScore(index)}>
+                      View Score
+                    </button>
+                  </div>
+                ) : (
+                  // Show Remove button before score is fetched
+                  ''
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
         )}
 
         {/* Description Section */}
