@@ -1,0 +1,529 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Default Light Mode */
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333333;
+  --primary-color: #6c63ff;
+  --secondary-color: #808080;
+  --success-color: #28a745;
+  --card-bg-color: #fff;
+  --border-color: #ddd;
+  --hover-bg-color: #f0f0f0;
+  --btn-hover-color: #218838;
+}
+
+/* Dark Mode Customizations */
+[data-theme="dark"] {
+  --bg-color: #000000; /* Full black background for dark mode */
+  --text-color: #f8f9fa; /* Light text color for dark mode */
+  --primary-color: #61dafb;
+  --secondary-color: #adb5bd;
+  --card-bg-color: #3c4045;
+  --border-color: #565a5e;
+  --hover-bg-color: #495057;
+  --btn-hover-color: #198754;
+}
+
+
+/* Container to align sections */
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  gap: 30px;
+}
+
+.input-section, .result-section {
+  flex: 1;
+  background: var(--card-bg-color);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toggle-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: var(--btn-hover-color);
+  transform: scale(1.05);
+}
+
+/* Input Section */
+.upload-section input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.resume-list {
+  margin-top: 20px;
+}
+
+.resume-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--hover-bg-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.view-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: var(--btn-hover-color);
+  transform: scale(1.05);
+}
+
+.get-score-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.get-score-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Result Section */
+.result-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-item {
+  background: var(--hover-bg-color);
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Add specific styles for the result-content in both light and dark themes */
+.result-content {
+  background: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .result-content {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Upload Section */
+.upload-section {
+  background-color: var(--card-bg-color);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.upload-icon {
+  font-size: 24px;
+}
+
+.upload-input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.upload-input:focus {
+  border-color: var(--primary-color);
+}
+
+/* Description Section */
+.description {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.description p {
+  font-size: 16px;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.description span {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.description a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-decoration 0.3s ease;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .upload-section {
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+/* Job Description Textarea */
+.job-description-textarea {
+  width: 100%;
+  height: 200px;
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--card-bg-color);
+  resize: vertical;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-description-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0px 0px 8px rgba(108, 99, 255, 0.5); /* Focus shadow */
+}
+
+.job-description-textarea::placeholder {
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+/* Label for Textarea */
+.job-description-label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  display: block;
+}
+
+/* Textarea Wrapper */
+.job-description-textarea-wrapper {
+  margin-bottom: 20px;
+}
+
+/* Style for the file list container */
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f1f1; /* Light background */
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for file items */
+.file-item:hover {
+  background-color: #e0e0e0; /* Slightly darker background on hover */
+  transform: translateX(5px); /* Slide effect to the right */
+}
+
+/* Style for file name */
+.file-item span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the remove button */
+.remove-file-btn {
+  background-color: #ff4d4f; /* Red color for remove button */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for remove button */
+.remove-file-btn:hover {
+  background-color: #ff0000; /* Darker red when hovering */
+  transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+/* Transition for smooth removal effect */
+.file-item.removing {
+  opacity: 0; /* Fade out effect */
+  transform: translateX(-10px); /* Slide to the left */
+}
+
+/* Style for the selected resume list */
+.resume-list-wrapper {
+  margin-top: 20px;
+}
+
+.resume-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume-item span {
+  font-weight: bold;
+  color: #333;
+}
+
+.view-resume-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.view-resume-btn:hover {
+  background-color: #45a049;
+}
+
+.remove-file-btn {
+  background-color: #ff4d4f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.remove-file-btn:hover {
+  background-color: #ff0000;
+  transform: scale(1.05);
+}
+
+
+/* App.css */
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align left */
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Logo Icon Styling */
+.logo-icon {
+  margin-right: 15px;
+  font-size: 2.5rem; /* Slightly larger icon */
+  color: var(--primary-color); /* Primary color for the icon */
+  transition: color 0.3s ease;
+}
+
+/* Styling for the logo text */
+.logo-text {
+  font-size: 2.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Add uppercase for a professional look */
+  transition: color 0.3s ease;
+}
+
+/* Hover effects for the logo */
+.logo:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Dark/Light Mode Adjustments */
+[data-theme="light"] .logo-text {
+  color: #333; /* Dark text for light mode */
+}
+
+[data-theme="dark"] .logo-text {
+  color: #f8f9fa; /* Light text for dark mode */
+}
+
+[data-theme="light"] .logo-icon {
+  color: #333; /* Dark icon for light mode */
+}
+
+[data-theme="dark"] .logo-icon {
+  color: #f8f9fa; /* Light icon for dark mode */
+}
+
+/* Custom Colors */
+:root {
+  --primary-color: #4CAF50; /* Green for logo */
+}
+
+/* Add Animation */
+@keyframes logoAnimation {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.logo {
+  animation: logoAnimation 0.5s ease-in-out;
+}
+
+
+.get-score-btn {
+  margin-top: 20px;
+}
+
+
+.file-list {
+  margin-top: 10px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.remove-file-btn {
+  margin-left: 10px;
+  background-color: #ff6b6b;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-file-btn:hover {
+  background-color: #ff4b4b;
+}
