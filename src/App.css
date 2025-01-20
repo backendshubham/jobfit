@@ -55,7 +55,7 @@ body {
 .input-section, .result-section {
   flex: 1;
   background: var(--card-bg-color);
-  padding: 30px;
+  padding: 15px;
   border-radius: 20px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -177,7 +177,11 @@ body {
   .container {
     flex-direction: column;
   }
-}
+  body {
+    padding: 0px !important;
+    padding-top: 15px !important; 
+  }
+} 
 
 /* Upload Section */
 .upload-section {
