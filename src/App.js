@@ -17,17 +17,17 @@ const App = () => {
     const rootElement = document.getElementById('root');
     console.log('rootElement: ', rootElement);
     const newTheme = !darkMode ? 'dark' : 'light';
-    rootElement.setAttribute('data-theme', newTheme); 
+    rootElement.setAttribute('data-theme', newTheme);
     setDarkMode(!darkMode);
-    // toast.info(`Switched to ${newTheme} Mode!`, { autoClose: 3000 });
+    // toast.info(`Switched to ${newTheme} Mode!`, { autoClose: 1000 });
   };
 
 
-const handleResumeChange = (e) => {
+  const handleResumeChange = (e) => {
     const files = e.target.files; // Access files from the event
     const filesArray = Array.from(files); // Convert FileList to an array
     setResumeFiles(filesArray); // Update the state with the selected files
-};
+  };
 
 
   const handleJobDescriptionChange = (e) => {
@@ -41,7 +41,7 @@ const handleResumeChange = (e) => {
     }
 
     setIsLoading(true);
-    
+
     const formData = new FormData();
     resumeFiles.forEach((file) => {
       formData.append('resume', file);
@@ -72,19 +72,19 @@ const handleResumeChange = (e) => {
 
   return (
     <div className={`App ${darkMode ? 'dark' : ''}`} data-theme={darkMode ? 'dark' : 'light'}>
-      <Header toggleTheme={toggleTheme} />
+      <Header darkMode={darkMode} toggleTheme={toggleTheme} />
       <div className="container">
         {/* Left Section - Upload */}
         <div className="input-section">
-        <div className="logo">
+          <div className="logo">
             <span className="logo-icon">
               <i className="fas fa-briefcase"></i>
             </span>
             <span className="logo-text">JobFit.AI</span>
           </div>
           <h2>Analyze resumes and rank them based on the job description</h2>
-          <InputSection 
-            jobDescription={jobDescription} 
+          <InputSection
+            jobDescription={jobDescription}
             handleJobDescriptionChange={handleJobDescriptionChange}
             handleResumeChange={handleResumeChange}
             handleResumeSubmit={handleResumeSubmit}

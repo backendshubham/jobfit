@@ -35,7 +35,7 @@ body {
 [data-theme="dark"] {
   --bg-color: #000000; /* Full black background for dark mode */
   --text-color: #f8f9fa; /* Light text color for dark mode */
-  --primary-color: #61dafb;
+  --primary-color: #87daf1;
   --secondary-color: #adb5bd;
   --card-bg-color: #3c4045;
   --border-color: #565a5e;
