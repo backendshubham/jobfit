@@ -101,7 +101,7 @@ const App = () => {
       </div>
 
       <ToastContainer />
-      <Footer />
+      {/* <Footer /> */}
     </div>
     
   );
